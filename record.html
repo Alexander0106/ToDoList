@@ -31,8 +31,8 @@
   <script type="text/javascript">
     var fdb = new ForerunnerDB();
     var db = fdb.db("mydb");
-    var aCollection = db.collection('a');
-    aCollection.load();
+    var bCollection = db.collection('b');
+    bCollection.load();
     $("#recordsubmit").click(function(){
       var aaa={
         name:$("#recordname").val(),
@@ -42,8 +42,8 @@
       $("#recordname").val("");
       $("#recorddate").val("");
       $("#recordimp").val("");
-      aCollection.insert(aaa);
-      aCollection.save();
+      bCollection.insert(aaa);
+      bCollection.save();
     });
   </script>
 </body>
