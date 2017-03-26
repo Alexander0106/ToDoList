@@ -61,21 +61,18 @@
           imp:$("#changeimp1").val()
         })[0];
         bCollection.updateById(a._id,{
-          name:$("#changeuse2").val(),
-          date:$("#changecost2").val()/1,
+          name:$("#changename2").val(),
           date:$("#changedate2").val(),
-          type:$("#changetype2").val()
+          imp:$("#changeimp2").val()
         });
       }
-      $("#changeuse1").val("");
-      $("#changecost1").val("");
+      $("#changename1").val("");
       $("#changedate1").val("");
-      $("#changetype1").val("");
-      $("#changeuse2").val("");
-      $("#changecost2").val("");
+      $("#changeimp1").val("");
+      $("#changename2").val("");
       $("#changedate2").val("");
-      $("#changetype2").val("");
-      aCollection.save();
+      $("#changeimp2").val("");
+      bCollection.save();
     });
   </script>
 </body>
