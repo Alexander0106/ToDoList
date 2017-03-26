@@ -28,7 +28,27 @@
     <tbody id="a">
     </tbody>
   </table>
-  <button class="btn btn-primary" id="listsubmit">Submit</button>
   <button class="btn btn-warning" onclick="location.href='index.html'">Back</button>
+  <script type="text/javascript">
+  	var fdb = new ForerunnerDB();
+    var db = fdb.db("mydb");
+    var bCollection = db.collection('b');
+    bCollection.load();
+    function createString(name,date,imp){
+      return "<tr><td>"+name+"</td><td>"+date+"</td><td>"+imp+"</td></tr>";
+    }
+    $("#listall").click(function(){
+      $("#a tr").remove();
+      var a=bCollection.find({},{
+        $orderBy:{date:1}
+      });
+      for(var i=0;i<a.length;i++){
+        var name=a[i].name;
+        var date=a[i].date;
+        var imp=a[i].imp;
+        $("#a").append(createString(name,date,imp))
+      };
+    });
+  </script>
 </body>
 </html>
