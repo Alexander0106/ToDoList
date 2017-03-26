@@ -33,6 +33,18 @@
     var db = fdb.db("mydb");
     var aCollection = db.collection('a');
     aCollection.load();
+    $("#recordsubmit").click(function(){
+      var aaa={
+        name:$("#recordname").val(),
+        date:$("#recorddate").val(),
+        imp:$("#recordimp").val(),
+      };
+      $("#recordname").val("");
+      $("#recorddate").val("");
+      $("#recordimp").val("");
+      aCollection.insert(aaa);
+      aCollection.save();
+    });
   </script>
 </body>
 </html>
