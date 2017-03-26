@@ -24,5 +24,15 @@
   	<option value="med">Mediocre</option>
   	<option value="not">Not Important</option>
   </select>
+  <br>
+  <br>
+  <button class="btn btn-primary" id="recordsubmit">Submit</button>
+  <button class="btn btn-warning" onclick="location.href='index.html'"></button>
+  <script type="text/javascript">
+    var fdb = new ForerunnerDB();
+    var db = fdb.db("mydb");
+    var aCollection = db.collection('a');
+    aCollection.load();
+  </script>
 </body>
 </html>
