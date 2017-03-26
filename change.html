@@ -42,5 +42,41 @@
   <br>
   <button class="btn btn-primary" id="changesubmit">Submit</button>
   <button class="btn btn-warning" onclick="location.href='index.html'">Back</button>
+  <script type="text/javascript">
+  	var fdb = new ForerunnerDB();
+    var db = fdb.db("mydb");
+    var bCollection = db.collection('b');
+    bCollection.load();
+    $("#changesubmit").click(function(){
+      if($("#changename2").val()==""&&$("#changedate2").val()==""&&$("#changeimp2").val()==""){
+        bCollection.remove({
+          name:$("#changename1").val(),
+          date:$("#changedate1").val(),
+          imp:$("#changeimp1").val()
+        });
+      }else{
+        var a=bCollection.find({
+          name:$("#changename1").val(),
+          date:$("#changedate1").val(),
+          imp:$("#changeimp1").val()
+        })[0];
+        bCollection.updateById(a._id,{
+          name:$("#changeuse2").val(),
+          date:$("#changecost2").val()/1,
+          date:$("#changedate2").val(),
+          type:$("#changetype2").val()
+        });
+      }
+      $("#changeuse1").val("");
+      $("#changecost1").val("");
+      $("#changedate1").val("");
+      $("#changetype1").val("");
+      $("#changeuse2").val("");
+      $("#changecost2").val("");
+      $("#changedate2").val("");
+      $("#changetype2").val("");
+      aCollection.save();
+    });
+  </script>
 </body>
 </html>
