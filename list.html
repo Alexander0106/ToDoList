@@ -34,8 +34,8 @@
     var db = fdb.db("mydb");
     var bCollection = db.collection('b');
     bCollection.load();
-    function createString(name,date,imp){
-      return "<tr><td>"+name+"</td><td>"+date+"</td><td>"+imp+"</td></tr>";
+    function createString(name,date,left){
+      return "<tr><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
     }
     $("#listall").click(function(){
       $("#a tr").remove();
@@ -45,8 +45,8 @@
       for(var i=0;i<a.length;i++){
         var name=a[i].name;
         var date=a[i].date;
-        var imp=a[i].imp;
-        $("#a").append(createString(name,date,imp))
+        var left=
+        $("#a").append(createString(name,date,left))
       };
     });
   </script>
