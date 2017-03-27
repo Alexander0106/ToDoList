@@ -35,7 +35,7 @@
     var bCollection = db.collection('b');
     bCollection.load();
     function createString(name,date,left){
-      return "<tr id="'trid'"><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+      return "<tr><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
     }
     $("#listall").click(function(){
       $("#a tr").remove();
