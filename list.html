@@ -34,8 +34,14 @@
     var db = fdb.db("mydb");
     var bCollection = db.collection('b');
     bCollection.load();
-    function createString(name,date,left){
-      return "<tr><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+    function createString1(name,date,left){
+      return "<tr id='trid1'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+    }
+    function createString2(name,date,left){
+      return "<tr id='trid2'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+    }
+    function createString3(name,date,left){
+      return "<tr id='trid3'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
     }
     $("#listall").click(function(){
       $("#a tr").remove();
@@ -53,7 +59,15 @@
         }else{
           var left=Math.round((parse1-parse2)/86400000);
         }
-        $("#a").append(createString(name,date,left))
+        if(a[i].imp=="imp"){
+          $("#a").append(createString1(name,date,left))
+        }
+        if(a[i].imp=="med"){
+          $("#a").append(createString2(name,date,left))
+        }
+        if(a[i].imp=="not"){
+          $("#a").append(createString3(name,date,left))
+        }
       };
     });
   </script>
