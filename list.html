@@ -83,7 +83,7 @@
         var parse1=Date.parse(a[i].date);
         var d=new Date();
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
-        if(parse1-parse2<86400000){
+        if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
         }else{
           var left=Math.round((parse1-parse2)/86400000);
@@ -104,7 +104,7 @@
         var parse1=Date.parse(a[i].date);
         var d=new Date();
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
-        if(parse1-parse2<86400000){
+        if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
         }else{
           var left=Math.round((parse1-parse2)/86400000);
@@ -125,7 +125,7 @@
         var parse1=Date.parse(a[i].date);
         var d=new Date();
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
-        if(parse1-parse2<86400000){
+        if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
         }else{
           var left=Math.round((parse1-parse2)/86400000);
