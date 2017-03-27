@@ -91,6 +91,48 @@
         $("#a").append(createString1(name,date,left))
       };
     });
+    $("#listmed").click(function(){
+      $("#a tr").remove();
+      var a=bCollection.find({
+        imp:"med"
+      },{
+        $orderBy:{date:1}
+      });
+      for(var i=0;i<a.length;i++){
+        var name=a[i].name;
+        var date=a[i].date;
+        var parse1=Date.parse(a[i].date);
+        var d=new Date();
+        var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
+        if(parse1-parse2<86400000){
+          var left="Due Today";
+        }else{
+          var left=Math.round((parse1-parse2)/86400000);
+        }
+        $("#a").append(createString2(name,date,left))
+      };
+    });
+    $("#listnot").click(function(){
+      $("#a tr").remove();
+      var a=bCollection.find({
+        imp:"not"
+      },{
+        $orderBy:{date:1}
+      });
+      for(var i=0;i<a.length;i++){
+        var name=a[i].name;
+        var date=a[i].date;
+        var parse1=Date.parse(a[i].date);
+        var d=new Date();
+        var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
+        if(parse1-parse2<86400000){
+          var left="Due Today";
+        }else{
+          var left=Math.round((parse1-parse2)/86400000);
+        }
+        $("#a").append(createString3(name,date,left))
+      };
+    });
   </script>
 </body>
 </html>
