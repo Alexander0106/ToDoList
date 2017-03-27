@@ -2,11 +2,11 @@ body{
   text-align:center;
 }
 #trid1{
-  color:red;
+  background-color:red;
 }
 #trid2{
-  color:yellow;
+  background-color:yellow;
 }
 #trid3{
-  color:green;
+  background-color:green;
 }
