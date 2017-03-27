@@ -28,5 +28,21 @@
   <br>
   <button class="btn btn-primary" id="addnewsubmit">Submit</button>
   <button class="btn btn-warning" onclick="location.href='reminder.html'">Back</button>
+  <script type="text/javascript">
+  	var fdb = new ForerunnerDB();
+    var db = fdb.db("mydb");
+    var cCollection = db.collection('c');
+    cCollection.load();
+    $("#addnewsubmit").click(function(){
+      var aaa={
+        name:$("#addnewname").val(),
+        des:$("#addnewdescription").val()
+      };
+      $("#addnewname").val("");
+      $("#addnewdescription").val("");
+      cCollection.insert(aaa);
+      cCollection.save();
+    });
+  </script>
 </body>
 </html>
