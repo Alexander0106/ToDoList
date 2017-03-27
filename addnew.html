@@ -36,10 +36,12 @@
     $("#addnewsubmit").click(function(){
       var aaa={
         name:$("#addnewname").val(),
-        des:$("#addnewdescription").val()
+        des:$("#addnewdescription").val(),
+        imp:$("#addnewimp").val()
       };
       $("#addnewname").val("");
       $("#addnewdescription").val("");
+      $("#addnewimp").val("");
       cCollection.insert(aaa);
       cCollection.save();
     });
