@@ -45,7 +45,13 @@
       for(var i=0;i<a.length;i++){
         var name=a[i].name;
         var date=a[i].date;
-        var left=
+        var parse1=Date.parse(a[i].date);
+        var parse2=Date.parse(new Date());
+        if(parse1-parse2<86400000){
+          var left="Due Today";
+        }else{
+          var left=Math.round(parse1-parse2/86400000);
+        }
         $("#a").append(createString(name,date,left))
       };
     });
