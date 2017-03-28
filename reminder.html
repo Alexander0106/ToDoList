@@ -24,6 +24,7 @@
     <tbody id="a">
     </tbody>
   </table>
+  <button class="btn btn-primary" id="reminderload">Load</button>
   <button class="btn btn-warning" onclick="location.href='index.html'">Back</button>
   <script type="text/javascript">
     var fdb = new ForerunnerDB();
@@ -39,21 +40,23 @@
     function createString3(name,des){
       return "<tr class='trid3'><td>"+name+"</td><td>"+des+"</td></tr>";
     }
-    $("#a tr").remove();
-    var a=cCollection.find();
-    for(var i=0;i<a.length;i++){
-      var name=a[i].name;
-      var des=a[i].des;
-      if(a[i].imp=="imp"){
-        $("#a").append(createString1(name,des))
+    $("#reminderload").click(function(){
+      $("#a tr").remove();
+      var a=cCollection.find();
+      for(var i=0;i<a.length;i++){
+        var name=a[i].name;
+        var des=a[i].des;
+        if(a[i].imp=="imp"){
+          $("#a").append(createString1(name,des))
+        }
+        if(a[i].imp=="med"){
+          $("#a").append(createString2(name,des))
+        }
+        if(a[i].imp=="not"){
+          $("#a").append(createString3(name,des))
+        }
       }
-      if(a[i].imp=="med"){
-        $("#a").append(createString2(name,des))
-      }
-      if(a[i].imp=="not"){
-        $("#a").append(createString3(name,des))
-      }
-    }
+    })
   </script>
 </body>
 </html>
