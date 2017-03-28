@@ -13,6 +13,9 @@
 <body>
   <h1>To Do List</h1>
   <h4 id="h4"></h4>
+  <button class="btn btn-primary" id="duetoday">Due Today</button>
+  <br>
+  <br>
   <button class="btn btn-primary" onclick="location.href='record.html'">Record</button>
   <br>
   <br>
@@ -28,17 +31,19 @@
     var db = fdb.db("mydb");
     var bCollection = db.collection('b');
     bCollection.load();
-    var d=new Date();
-    var da=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-    var a=bCollection.find({
-      date:da
-    });
-    for(var i=0;i<a.length;i++){
-      if(i<0){
-        $("#h4").text(", ");
+    $("#duetoday").click(function(){
+      var d=new Date();
+      var da=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+      var a=bCollection.find({
+        date:da
+      });
+      for(var i=0;i<a.length;i++){
+        if(i<0){
+          $("#h4").text(", ");
+        }
+        $("#h4").text(a[i].name);
       }
-      $("#h4").text(a[i].name);
-    }
+    });
   </script>
   </body>
 </html>
