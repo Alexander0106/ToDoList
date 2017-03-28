@@ -36,13 +36,13 @@
     var bCollection = db.collection('b');
     bCollection.load();
     function createString1(name,date,left){
-      return "<tr id='trid1'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+      return "<tr class='trid1'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
     }
     function createString2(name,date,left){
-      return "<tr id='trid2'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+      return "<tr class='trid2'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
     }
     function createString3(name,date,left){
-      return "<tr id='trid3'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+      return "<tr class='trid3'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
     }
     $("#listall").click(function(){
       $("#a tr").remove();

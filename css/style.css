@@ -1,13 +1,13 @@
 body{
   text-align:center;
 }
-#trid1{
+.trid1{
   background-color:red;
 }
-#trid2{
+.trid2{
   background-color:yellow;
 }
-#trid3{
+.trid3{
   background-color:lime;
 }
 #listall{
