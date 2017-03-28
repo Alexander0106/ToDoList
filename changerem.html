@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/fdb-all.min.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>Change Reminder</title>
+</head>
+<body>
+  <h1>Change Reminder</h1>
+  <h4>From</h4>
+  <span>Name: </span><input type="text" id="changeremname1">
+  <br>
+  <br>
+  <span>Description: </span><input type="text" id="changeremdescription1">
+  <br>
+  <br>
+  <select id="changeremimp1">
+  	<option value=""></option>
+  	<option value="imp">Important</option>
+  	<option value="med">Mediocre</option>
+  	<option value="not">Not Important</option>
+  </select>
+  <h4>To</h4>
+  <span>Name: </span><input type="text" id="changeremname2">
+  <br>
+  <br>
+  <span>Date: </span><input type="text" id="changeremdescription2">
+  <br>
+  <br>
+  <select id="changeremimp2">
+  	<option value=""></option>
+  	<option value="imp">Important</option>
+  	<option value="med">Mediocre</option>
+  	<option value="not">Not Important</option>
+  </select>
+  <br>
+  <br>
+  <button class="btn btn-primary" id="changeremsubmit">Submit</button>
+  <button class="btn btn-warning" onclick="location.href='reminder.html'">Back</button>
+  <script type="text/javascript">
+  	var fdb = new ForerunnerDB();
+    var db = fdb.db("mydb");
+    var cCollection = db.collection('c');
+    cCollection.load();
+    $("#changeremsubmit").click(function(){
+      if($("#changeremname2").val()==""&&$("#changeremdescription2").val()==""&&$("#changeremimp2").val()==""){
+        cCollection.remove({
+          name:$("#changeremname1").val(),
+          des:$("#changeremdescription1").val(),
+          imp:$("#changeremimp1").val()
+        });
+      }else{
+        var a=cCollection.find({
+          name:$("#changeremname1").val(),
+          des:$("#changeremdescription1").val(),
+          imp:$("#changeremimp1").val()
+        })[0];
+        cCollection.updateById(a._id,{
+          name:$("#changeremname2").val(),
+          des:$("#changeremdescription2").val(),
+          imp:$("#changeremimp2").val()
+        });
+      }
+      $("#changeremname1").val("");
+      $("#changeremdescription1").val("");
+      $("#changeremimp1").val("");
+      $("#changeremname2").val("");
+      $("#changeremdescription2").val("");
+      $("#changeremimp2").val("");
+      cCollection.save();
+    });
+  </script>
+</body>
+</html>
