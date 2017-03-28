@@ -44,15 +44,15 @@
     for(var i=0;i<a.length;i++){
       var name=a[i].name;
       var des=a[i].des;
-    }
-    if(a[i].imp=="imp"){
-      $("#a").append(createString1(name,des))
-    }
-    if(a[i].imp=="med"){
-      $("#a").append(createString2(name,des))
-    }
-    if(a[i].imp=="not"){
-      $("#a").append(createString3(name,des))
+      if(a[i].imp=="imp"){
+        $("#a").append(createString1(name,des))
+      }
+      if(a[i].imp=="med"){
+        $("#a").append(createString2(name,des))
+      }
+      if(a[i].imp=="not"){
+        $("#a").append(createString3(name,des))
+      }
     }
   </script>
 </body>
