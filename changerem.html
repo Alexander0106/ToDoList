@@ -40,14 +40,10 @@
       if($("#changeremname2").val()==""&&$("#changeremdescription2").val()==""&&$("#changeremimp2").val()==""){
         cCollection.remove({
           name:$("#changeremname1").val(),
-          des:$("#changeremdescription1").val(),
-          imp:$("#changeremimp1").val()
         });
       }else{
         var a=cCollection.find({
           name:$("#changeremname1").val(),
-          des:$("#changeremdescription1").val(),
-          imp:$("#changeremimp1").val()
         })[0];
         cCollection.updateById(a._id,{
           name:$("#changeremname2").val(),
@@ -56,8 +52,6 @@
         });
       }
       $("#changeremname1").val("");
-      $("#changeremdescription1").val("");
-      $("#changeremimp1").val("");
       $("#changeremname2").val("");
       $("#changeremdescription2").val("");
       $("#changeremimp2").val("");
