@@ -142,11 +142,12 @@
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
+          $("#a").append(createString3(name,date,left))
         }
         if(parse1-parse2>86400000){
           var left=Math.round((parse1-parse2)/86400000);
+          $("#a").append(createString3(name,date,left))
         }
-        $("#a").append(createString3(name,date,left))
       };
     });
     $("#listoverdues").click(function(){
