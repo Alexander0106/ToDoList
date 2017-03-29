@@ -11,17 +11,23 @@
   <title>Change Reminder</title>
 </head>
 <body>
+  <br>
   <h1>Change Reminder</h1>
+  <br>
   <h4>From</h4>
-  <span>Name: </span><input type="text" id="changeremname1">
+  <span>Name: </span><input type="text" id="changeremname1" class="input">
+  <br>
+  <br>
   <h4>To</h4>
-  <span>Name: </span><input type="text" id="changeremname2">
+  <span>Name: </span><input type="text" id="changeremname2" class="input">
   <br>
   <br>
-  <span>Description: </span><input type="text" id="changeremdescription2">
+  <br>
+  <span>Description: </span><input type="text" id="changeremdescription2" class="input">
   <br>
   <br>
-  <select id="changeremimp2">
+  <br>
+  <select id="changeremimp2" class="input">
   	<option value=""></option>
   	<option value="imp">Important</option>
   	<option value="med">Mediocre</option>
@@ -29,8 +35,9 @@
   </select>
   <br>
   <br>
-  <button class="btn btn-primary" id="changeremsubmit">Submit</button>
-  <button class="btn btn-warning" onclick="location.href='reminder.html'">Back</button>
+  <br>
+  <button class="btn btn-primary button" id="changeremsubmit">Submit</button>
+  <button class="btn btn-warning button" onclick="location.href='reminder.html'">Back</button>
   <script type="text/javascript">
   	var fdb = new ForerunnerDB();
     var db = fdb.db("mydb");

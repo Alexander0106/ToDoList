@@ -11,9 +11,12 @@
   <title>Reminder</title>
 </head>
 <body>
+  <br>
   <h1>Reminder</h1>
-  <button class="btn btn-default" onclick="location.href='addnew.html'">Add New</button>
-  <button class="btn btn-default" onclick="location.href='changerem.html'">Change</button>
+  <button class="btn btn-default sbutton" onclick="location.href='addnew.html'">Add New</button>
+  <button class="btn btn-default sbutton" onclick="location.href='changerem.html'">Change</button>
+  <br>
+  <br>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -24,8 +27,8 @@
     <tbody id="a">
     </tbody>
   </table>
-  <button class="btn btn-primary" id="reminderload">Load</button>
-  <button class="btn btn-warning" onclick="location.href='index.html'">Back</button>
+  <button class="btn btn-primary button" id="reminderload">Load</button>
+  <button class="btn btn-warning button" onclick="location.href='index.html'">Back</button>
   <script type="text/javascript">
     var fdb = new ForerunnerDB();
     var db = fdb.db("mydb");
