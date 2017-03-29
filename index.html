@@ -33,11 +33,18 @@
     bCollection.load();
     $("#duetoday").click(function(){
       var d=new Date();
+      var e=d.getMonth();
+      if(e<10){
+        var e="0"+e;
+      }
+      var f=d.getDate();
+      if(f<10){
+        var f="0"+f;
+      }
       var da=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
       var a=bCollection.find({
         date:da
       });
-      console.log(da);
       for(var i=0;i<a.length;i++){
         if(i<0){
           $("#h4").text(", ");

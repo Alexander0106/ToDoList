@@ -54,6 +54,14 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
+        var e=d.getMonth();
+        if(e<10){
+          var e="0"+e;
+        }
+        var f=d.getDate();
+        if(f<10){
+          var f="0"+f;
+        }
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
@@ -93,6 +101,14 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
+        var e=d.getMonth();
+        if(e<10){
+          var e="0"+e;
+        }
+        var f=d.getDate();
+        if(f<10){
+          var f="0"+f;
+        }
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
@@ -116,6 +132,14 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
+        var e=d.getMonth();
+        if(e<10){
+          var e="0"+e;
+        }
+        var f=d.getDate();
+        if(f<10){
+          var f="0"+f;
+        }
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
@@ -139,6 +163,14 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
+        var e=d.getMonth();
+        if(e<10){
+          var e="0"+e;
+        }
+        var f=d.getDate();
+        if(f<10){
+          var f="0"+f;
+        }
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
@@ -160,6 +192,14 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
+        var e=d.getMonth();
+        if(e<10){
+          var e="0"+e;
+        }
+        var f=d.getDate();
+        if(f<10){
+          var f="0"+f;
+        }
         var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
         if(parse1<parse2){
           var left=Math.round((parse1-parse2)/86400000);
