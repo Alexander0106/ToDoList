@@ -11,20 +11,27 @@
   <title>Change</title>
 </head>
 <body>
+  <br>
   <h1>Change</h1>
+  <br>
   <h4>From</h4>
-  <span>Name: </span><input type="text" id="changename1">
+  <span>Name: </span><input type="text" id="changename1" class="input">
   <br>
   <br>
-  <span>Date: </span><input type="date" id="changedate1">
+  <br>
+  <span>Date: </span><input type="date" id="changedate1" class="input">
+  <br>
+  <br>
   <h4>To</h4>
-  <span>Name: </span><input type="text" id="changename2">
+  <span>Name: </span><input type="text" id="changename2" class="input">
   <br>
   <br>
-  <span>Date: </span><input type="date" id="changedate2">
+  <br>
+  <span>Date: </span><input type="date" id="changedate2" class="input">
   <br>
   <br>
-  <select id="changeimp2">
+  <br>
+  <select id="changeimp2" class="input">
   	<option value=""></option>
   	<option value="imp">Important</option>
   	<option value="med">Mediocre</option>
@@ -32,8 +39,9 @@
   </select>
   <br>
   <br>
-  <button class="btn btn-primary" id="changesubmit">Submit</button>
-  <button class="btn btn-warning" onclick="location.href='index.html'">Back</button>
+  <br>
+  <button class="btn btn-primary button" id="changesubmit">Submit</button>
+  <button class="btn btn-warning button" onclick="location.href='index.html'">Back</button>
   <script type="text/javascript">
   	var fdb = new ForerunnerDB();
     var db = fdb.db("mydb");

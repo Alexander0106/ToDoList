@@ -23,6 +23,27 @@ body{
 #listnot{
   background-color:lime;
 }
-#listoverdues{
-  float:right;
+.index{
+  width:60%;
+  height:50px;
+  font-size:20px;
+}
+span{
+  font-size:20px;
+}
+.input{
+  width:50%;
+  height:30px;
+  font-size:20px;
+}
+.button{
+  width:40%;
+  height:50px;
+  font-size:20px;
+}
+h4{
+  font-size:25px;
+}
+thead{
+  font-size:20px;
 }

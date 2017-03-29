@@ -11,18 +11,24 @@
   <title>Index</title>
 </head>
 <body>
+  <br>
   <h1>To Do List</h1>
   <h4 id="h4"></h4>
+  <br>
   <button class="btn btn-primary index" id="duetoday">Due Today</button>
+  <br>
   <br>
   <br>
   <button class="btn btn-primary index" onclick="location.href='record.html'">Record</button>
   <br>
   <br>
+  <br>
   <button class="btn btn-primary index" onclick="location.href='change.html'">Change</button>
   <br>
   <br>
+  <br>
   <button class="btn btn-primary index" onclick="location.href='list.html'">List</button>
+  <br>
   <br>
   <br>
   <button class="btn btn-primary index" onclick="location.href='reminder.html'">Reminder</button>
@@ -45,7 +51,6 @@
       var a=bCollection.find({
         date:da
       });
-      console.log(da);
       for(var i=0;i<a.length;i++){
         if(i==0){
           $("#h4").text("");
