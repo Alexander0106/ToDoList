@@ -76,7 +76,7 @@
           }
         }
         if(parse1-parse2>0){
-          var left=Math.round((parse1-parse2)/86400000);
+          var left=(parse1-parse2)/86400000;
           if(a[i].imp=="imp"){
             $("#a").append(createString1(name,date,left))
           }
@@ -115,7 +115,7 @@
           $("#a").append(createString1(name,date,left))
         }
         if(parse1-parse2>0){
-          var left=Math.round((parse1-parse2)/86400000);
+          var left=(parse1-parse2)/86400000;
           $("#a").append(createString1(name,date,left))
         }
       };
@@ -146,7 +146,7 @@
           $("#a").append(createString2(name,date,left))
         }
         if(parse1-parse2>0){
-          var left=Math.round((parse1-parse2)/86400000);
+          var left=(parse1-parse2)/86400000;
           $("#a").append(createString2(name,date,left))
         }
       };
@@ -177,7 +177,7 @@
           $("#a").append(createString3(name,date,left))
         }
         if(parse1-parse2>0){
-          var left=Math.round((parse1-parse2)/86400000);
+          var left=(parse1-parse2)/86400000;
           $("#a").append(createString3(name,date,left))
         }
       };
@@ -202,7 +202,7 @@
         }
         var parse2=Date.parse(d.getFullYear()+"-"+e+"-"+f);
         if(parse1<parse2){
-          var left=Math.round((parse1-parse2)/86400000);
+          var left=(parse1-parse2)/86400000;
           if(a[i].imp=="imp"){
             $("#a").append(createString1(name,date,left))
           }
