@@ -54,7 +54,7 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
-        var e=d.getMonth();
+        var e=d.getMonth()+1;
         if(e<10){
           var e="0"+e;
         }
@@ -62,7 +62,7 @@
         if(f<10){
           var f="0"+f;
         }
-        var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
+        var parse2=Date.parse(d.getFullYear()+"-"+e+"-"+f);
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
           if(a[i].imp=="imp"){
@@ -101,7 +101,7 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
-        var e=d.getMonth();
+        var e=d.getMonth()+1;
         if(e<10){
           var e="0"+e;
         }
@@ -109,7 +109,7 @@
         if(f<10){
           var f="0"+f;
         }
-        var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
+        var parse2=Date.parse(d.getFullYear()+"-"+e+"-"+f);
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
           $("#a").append(createString1(name,date,left))
@@ -132,7 +132,7 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
-        var e=d.getMonth();
+        var e=d.getMonth()+1;
         if(e<10){
           var e="0"+e;
         }
@@ -140,7 +140,7 @@
         if(f<10){
           var f="0"+f;
         }
-        var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
+        var parse2=Date.parse(d.getFullYear()+"-"+e+"-"+f);
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
           $("#a").append(createString2(name,date,left))
@@ -163,7 +163,7 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
-        var e=d.getMonth();
+        var e=d.getMonth()+1;
         if(e<10){
           var e="0"+e;
         }
@@ -171,7 +171,7 @@
         if(f<10){
           var f="0"+f;
         }
-        var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
+        var parse2=Date.parse(d.getFullYear()+"-"+e+"-"+f);
         if(0<parse1-parse2&&parse1-parse2<86400000){
           var left="Due Today";
           $("#a").append(createString3(name,date,left))
@@ -192,7 +192,7 @@
         var date=a[i].date;
         var parse1=Date.parse(a[i].date);
         var d=new Date();
-        var e=d.getMonth();
+        var e=d.getMonth()+1;
         if(e<10){
           var e="0"+e;
         }
@@ -200,7 +200,7 @@
         if(f<10){
           var f="0"+f;
         }
-        var parse2=Date.parse(d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate());
+        var parse2=Date.parse(d.getFullYear()+"-"+e+"-"+f);
         if(parse1<parse2){
           var left=Math.round((parse1-parse2)/86400000);
           if(a[i].imp=="imp"){
