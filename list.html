@@ -12,12 +12,15 @@
 </head>
 <body>
   <h1>List</h1>
-  <button class="btn btn-default" id="listall">All Things To Do</button>
-  <button class="btn btn-default" id="listoverdues">Overdues</button>
+  <button class="btn btn-default sbutton" id="listall">All Things</button>
+  <button class="btn btn-default sbutton" id="listoverdues">Overdues</button>
   <br>
-  <button class="btn btn-default" id="listimp">Important</button>
-  <button class="btn btn-default" id="listmed">Mediocre</button>
-  <button class="btn btn-default" id="listnot">Not Important</button>
+  <br>
+  <button class="btn btn-default sbutton" id="listimp">Important</button>
+  <button class="btn btn-default sbutton" id="listmed">Mediocre</button>
+  <button class="btn btn-default sbutton" id="listnot">Not Important</button>
+  <br>
+  <br>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -29,7 +32,7 @@
     <tbody id="a">
     </tbody>
   </table>
-  <button class="btn btn-warning" onclick="location.href='index.html'">Back</button>
+  <button class="btn btn-warning button" onclick="location.href='index.html'">Back</button>
   <script type="text/javascript">
   	var fdb = new ForerunnerDB();
     var db = fdb.db("mydb");
