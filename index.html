@@ -28,7 +28,7 @@
     var db = fdb.db("mydb");
     var bCollection = db.collection('b');
     bCollection.load();
-    $(document).ready(function(){
+    $(function(){
       var d=new Date();
       var da=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
       var a=bCollection.find({
