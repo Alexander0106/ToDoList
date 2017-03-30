@@ -28,6 +28,7 @@
         <td>Name</td>
         <td>Due Date</td>
         <td>Days Left</td>
+        <td>Done</td>
       </tr>
     </thead>
     <tbody id="a">
@@ -39,15 +40,26 @@
     var db = fdb.db("mydb");
     var bCollection = db.collection('b');
     bCollection.load();
+    function deletetr(e){
+      var name=$($(this).find("td")[0]).text();
+      var date=$($(this).find("td")[1]).text();
+      bCollection.remove({
+        name:name,
+        date:date
+      });
+      bCollection.save();
+      $(this).remove();
+    }
     function createString1(name,date,left){
-      return "<tr class='trid1'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+      return "<tr class='trid1'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td><td><button class='delete'>Done</button></td></tr>";
     }
     function createString2(name,date,left){
-      return "<tr class='trid2'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+      return "<tr class='trid2'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td><td><button class='delete'>Done</button></td></tr>";
     }
     function createString3(name,date,left){
-      return "<tr class='trid3'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td></tr>";
+      return "<tr class='trid3'><td>"+name+"</td><td>"+date+"</td><td>"+left+"</td><td><button class='delete'>Done</button></td></tr>";
     }
+    $("#a").on("click","tr",deletetr);
     $("#listall").click(function(){
       $("#a tr").remove();
       var a=bCollection.find({},{
