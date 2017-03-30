@@ -51,6 +51,9 @@
       var a=bCollection.find({
         date:da
       });
+      if(a.length==0){
+        $("#h4").text("Nothing Due Today");
+      }
       for(var i=0;i<a.length;i++){
         if(i==0){
           $("#h4").text("");
