@@ -36,14 +36,16 @@
     var cCollection = db.collection('c');
     cCollection.load();
     function deletetr(e){
-      var name=$($(this).find("td")[0]).text();
-      var des=$($(this).find("td")[1]).text();
-      cCollection.remove({
-        name:name,
-        des:des
-      });
-      cCollection.save();
-      $(this).remove();
+      if($(e.target).attr("class")=='delete'){
+        var name=$($(this).find("td")[0]).text();
+        var des=$($(this).find("td")[1]).text();
+        cCollection.remove({
+          name:name,
+          des:des
+        });
+        cCollection.save();
+        $(this).remove();
+      }
     }
     function createString1(name,des){
       return "<tr class='trid1'><td>"+name+"</td><td>"+des+"</td><td><button class='delete'>OK</button></td></tr>";
